@@ -73,7 +73,7 @@ const EPNSHelperAPI = {
       // To get channel ipfs hash from channel info
       let filter = contract.filters.AddChannel(channel);
       let block = startBlock;
-      if (startBlock != updateBlock) {
+      if (startBlock !== updateBlock) {
         filter = contract.filters.UpdateChannel(channel);
         block = updateBlock;
       }
@@ -85,7 +85,7 @@ const EPNSHelperAPI = {
           if (enableLogs) console.log("getChannelEvent() --> Finding: %s in | %o |", channel, response );
 
           response.forEach(function (item) {
-            if (item.args.channel.toString() == channel.toString()) {
+            if (item.args.channel.toString() === channel.toString()) {
               if (enableLogs) console.log("getChannelEvent() --> Selected Channel %o: ", item);
               filteredResponse = ethers.utils.toUtf8String(item.args.identity);
             }
@@ -108,7 +108,7 @@ const EPNSHelperAPI = {
       // Split Channel Identity, delimeter of identity is "+"
       const ids = identity.split("+"); // First segment is storage type, second is the pointer to it
 
-      if (ids[0] == 1) {
+      if (ids[0] === 1) {
         // IPFS HASH
         // Form Gateway URL
         const url = "https://ipfs.io/ipfs/" + ids[1];
@@ -190,11 +190,11 @@ const EPNSHelperAPI = {
           let channelsInfo = [];
           const channelsCount = response;
 
-          if (atIndex > channelsCount || atIndex == -1) {
+          if (atIndex > channelsCount || atIndex === -1) {
             atIndex = channelsCount - 1;
           }
 
-          if (numChannels == -1) {
+          if (numChannels === -1) {
             numChannels = channelsCount;
           }
 

@@ -26,6 +26,7 @@ function Medium({ numberOfPosts }) {
          //console.log(limitedPosts);
          setPostsLoaded(true);
       })
+      .catch((err) => console.log(err));
     }
 
   }, [numberOfPosts]);

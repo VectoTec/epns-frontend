@@ -21,7 +21,7 @@ function MediumCard({ title, thumbnail, link }) {
           radius="12px"
           align="stretch"
         >
-          <Image src={thumbnail} />
+          <Image src={thumbnail}/>
           <Span padding="20px 20px 12px 20px" size="1em" spacing="0.2em" color="#fff">{title}</Span>
         </MediumCardLink>
       </TiltModded>
